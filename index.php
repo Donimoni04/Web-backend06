@@ -109,6 +109,7 @@
       try {
         $dbFD = $db->prepare("SELECT * FROM form_data WHERE user_id = ?");
         $dbFD->execute([$uid]);
+        var_dump($uid);
         $fet = $dbFD->fetchAll(PDO::FETCH_ASSOC)[0];
         $form_id = $fet['id'];
         $_SESSION['form_id'] = $form_id;
